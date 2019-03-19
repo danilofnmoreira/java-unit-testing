@@ -1,4 +1,4 @@
-package br.com.marimbondo;
+package br.com.marimbondo.parameterization;
 
 import static java.util.List.of;
 import static org.junit.Assert.assertEquals;
@@ -9,6 +9,8 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Parameterized;
 import org.junit.runners.Parameterized.Parameter;
 import org.junit.runners.Parameterized.Parameters;
+
+import br.com.marimbondo.MathOperations;
 
 @RunWith(Parameterized.class) // Esta classe só pode conter 1 unico metodo de teste.
 public class ParameterizedSubtractionTest {
