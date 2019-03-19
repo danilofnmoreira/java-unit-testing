@@ -26,10 +26,12 @@ public class ParameterizedSubtractionTest {
 
 	private MathOperations mathOperations;
 
-	// anotando as variaveis de instancia com @Parameter, nao eh necessario a declaracao do construtor recebendo os parametros
-	@Parameter(0) private int a;
-	@Parameter(1) private int b;
-	@Parameter(2) private int expected;
+	// anotando as variaveis de instancia com @Parameter, nao eh necessario a
+	// declaracao do construtor recebendo os parametros, mas eh obriatorio o uso do
+	// idificador de acesso public
+	@Parameter(0) public int a;
+	@Parameter(1) public int b;
+	@Parameter(2) public int expected;
 
 	@Before
 	public void setUp() {
@@ -38,7 +40,7 @@ public class ParameterizedSubtractionTest {
 
 	@Test
 	public void given_TwoNumbers_when_CalculatesTheirMultiplication_then_ReturnTheCorrectResult() {
-		int actual = mathOperations.multiplication(a, b);
+		int actual = mathOperations.subtration(a, b);
 		assertEquals(expected, actual);
 	}
 
