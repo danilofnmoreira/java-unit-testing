@@ -1,6 +1,7 @@
 package br.com.marimbondo.rules;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.rules.ExpectedException.none;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -23,7 +24,7 @@ public class DivisionByZeroTest {
 			// (preferred) or org.junit.rules.MethodRule. A method must be public, not
 			// static, and must return a subtype of org.junit.rules.TestRule (preferred) or
 			// org.junit.rules.MethodRule.
-	public ExpectedException expectedException = ExpectedException.none();
+	public ExpectedException expectedException = none();
 
 	@Rule
 	public CustomRuleForLogs customRuleForLogs = new CustomRuleForLogs();

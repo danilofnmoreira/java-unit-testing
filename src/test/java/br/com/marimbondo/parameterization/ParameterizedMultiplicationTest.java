@@ -15,13 +15,10 @@ import br.com.marimbondo.MathOperations;
 public class ParameterizedMultiplicationTest {
 
 	@Parameters(name = "Param Multiplication {index}; values {0}*{1}={2} ") // repare o nome dos metodos
-	public static Iterable<Integer[]> parameters() {  // O metodo de parametros deve ser estatico e retornar um Iterable de Arrays
-		Iterable<Integer[]> params = of(
-				new Integer[] {1, 2,  2},
-				new Integer[] {0, 2,  0},
-				new Integer[] {4, 8, 32},
-				new Integer[] {9, 9, 81}
-				);
+	public static Iterable<Integer[]> parameters() { // O metodo de parametros deve ser estatico e retornar um Iterable
+														// de Arrays
+		Iterable<Integer[]> params = of(new Integer[] { 1, 2, 2 }, new Integer[] { 0, 2, 0 },
+				new Integer[] { 4, 8, 32 }, new Integer[] { 9, 9, 81 });
 		return params;
 	}
 
@@ -31,7 +28,7 @@ public class ParameterizedMultiplicationTest {
 	private int b;
 	private int a;
 
-	// seu contrutor recebera os parametros do metodo estatico anotado com @Parameters
+	// seu contrutor recebera os parametros do metodo estatico anotado com
 	public ParameterizedMultiplicationTest(int a, int b, int expected) {
 		this.a = a;
 		this.b = b;

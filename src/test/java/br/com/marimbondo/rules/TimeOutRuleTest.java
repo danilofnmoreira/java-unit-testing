@@ -2,6 +2,7 @@ package br.com.marimbondo.rules;
 
 import static java.util.List.of;
 import static org.junit.Assert.assertEquals;
+import static org.junit.rules.Timeout.seconds;
 
 import org.junit.Before;
 import org.junit.Rule;
@@ -28,7 +29,7 @@ public class TimeOutRuleTest {
 			// (preferred) or org.junit.rules.MethodRule. A method must be public, not
 			// static, and must return a subtype of org.junit.rules.TestRule (preferred) or
 			// org.junit.rules.MethodRule.
-	public Timeout timeoutRule = new Timeout(1);
+	public Timeout timeoutRule = seconds(10);
 
 	@Rule
 	public CustomRuleForLogs customRuleForLogs = new CustomRuleForLogs();
@@ -46,11 +47,7 @@ public class TimeOutRuleTest {
 
 	@Parameters(name = "Timeout Rule {index} - values {0}+{1}= {2}")
 	public static Iterable<Integer[]> parameters() {
-		return of(
-				new Integer[] { 1, 2, 3 }, 
-				new Integer[] { 8, 9, 17 }, 
-				new Integer[] { 3, 9, 12 }
-				);
+		return of(new Integer[] { 1, 2, 3 }, new Integer[] { 8, 9, 17 }, new Integer[] { 3, 9, 12 });
 	}
 
 	@Test

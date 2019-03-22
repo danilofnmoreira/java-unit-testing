@@ -1,6 +1,7 @@
 package br.com.marimbondo;
 
 import static java.time.LocalDate.of;
+import static java.time.LocalTime.now;
 import static java.time.Month.APRIL;
 import static java.time.Month.DECEMBER;
 import static java.time.Month.JULY;
@@ -56,21 +57,21 @@ public class Shop {
 
 	public Map<Product, Integer> encherEstoque() {
 		Map<Product, Integer> estoqueCheio = new HashMap<Product, Integer>();
-		estoqueCheio.put(new Product("Macarrao", of(2019,    APRIL, 21), 33.0), 10);
-		estoqueCheio.put(new Product(  "Cebola", of(2019, DECEMBER, 20), 50.0),  5);
-		estoqueCheio.put(new Product( "Celular", of(2019,     JULY, 10), 11.0),  3);
-		estoqueCheio.put(new Product(   "Mouse", of(2019, NOVEMBER, 18), 42.0), 20);
-		estoqueCheio.put(new Product(   "Arroz", of(2019, DECEMBER, 14), 20.0),  8);
+		estoqueCheio.put(new Product("Macarrao", of(2019, APRIL, 21), 33.0), 10);
+		estoqueCheio.put(new Product("Cebola", of(2019, DECEMBER, 20), 50.0), 5);
+		estoqueCheio.put(new Product("Celular", of(2019, JULY, 10), 11.0), 3);
+		estoqueCheio.put(new Product("Mouse", of(2019, NOVEMBER, 18), 42.0), 20);
+		estoqueCheio.put(new Product("Arroz", of(2019, DECEMBER, 14), 20.0), 8);
 		return estoqueCheio;
 	}
 
 	public boolean isOpen() {
-		LocalTime now = LocalTime.now();
+		LocalTime now = now();
 		return now.compareTo(LocalTime.of(9, 0)) > 0 && now.compareTo(LocalTime.of(18, 0)) < 0;
 	}
 
 	public boolean isClose() {
-		LocalTime now = LocalTime.now();
+		LocalTime now = now();
 		return now.compareTo(LocalTime.of(9, 0)) < 0 || now.compareTo(LocalTime.of(18, 0)) > 0;
 	}
 

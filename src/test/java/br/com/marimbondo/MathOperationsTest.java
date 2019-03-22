@@ -1,10 +1,11 @@
 package br.com.marimbondo;
 
+import static java.lang.System.out;
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assume.assumeNoException;
 
 import org.junit.After;
 import org.junit.AfterClass;
-import org.junit.Assume;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
@@ -18,14 +19,14 @@ public class MathOperationsTest {
 					// intensive activities, for example, to connect to a database. Methods marked
 					// with this annotation need to be defined as static to work with JUnit.
 	public static void justOneSetUp() {
-		System.out.println("justOneSetUp");
+		out.println("justOneSetUp");
 	}
 
 	@Before // Executed before each test. It is used to prepare the test environment (e.g.,
 			// read input data, initialize the class).
 	public void setUp() {
 		app = new MathOperations();
-		System.out.println("setup");
+		out.println("setup");
 	}
 
 	@Test // Identifies a method as a test method.
@@ -49,7 +50,7 @@ public class MathOperationsTest {
 			// up expensive memory structures.
 	public void cleanUp() {
 		app = null;
-		System.out.println("cleanUp");
+		out.println("cleanUp");
 	}
 
 	@AfterClass // Executed once, after all tests have been finished. It is used to perform
@@ -57,7 +58,7 @@ public class MathOperationsTest {
 				// annotated with this annotation need to be defined as static to work with
 				// JUnit.
 	public static void justOneCleanUp() {
-		System.out.println("justOneCleanUp");
+		out.println("justOneCleanUp");
 	}
 
 	@Ignore(value = "Because I want") // Marks that the test should be disabled. This is useful when the underlying
@@ -87,7 +88,7 @@ public class MathOperationsTest {
 		try {
 			app.division(a, b);
 		} catch (ArithmeticException e) {
-			Assume.assumeNoException(e); // Se falso, invalida o teste
+			assumeNoException(e); // Se falso, invalida o teste
 		}
 	}
 }

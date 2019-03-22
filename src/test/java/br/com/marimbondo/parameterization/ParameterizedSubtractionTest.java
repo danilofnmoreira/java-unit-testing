@@ -16,13 +16,10 @@ import br.com.marimbondo.MathOperations;
 public class ParameterizedSubtractionTest {
 
 	@Parameters(name = "Param Subtration {index}; values {0}*{1}={2} ") // repare o nome dos metodos
-	public static Iterable<Integer[]> parameters() {  // O metodo de parametros deve ser estatico e retornar um Iterable de Arrays
-		Iterable<Integer[]> params = of(
-				new Integer[] {1, 2, -1},
-				new Integer[] {0, 2, -2},
-				new Integer[] {4, 8, -4},
-				new Integer[] {9, 9,  0}
-				);
+	public static Iterable<Integer[]> parameters() { // O metodo de parametros deve ser estatico e retornar um Iterable
+														// de Arrays
+		Iterable<Integer[]> params = of(new Integer[] { 1, 2, -1 }, new Integer[] { 0, 2, -2 },
+				new Integer[] { 4, 8, -4 }, new Integer[] { 9, 9, 0 });
 		return params;
 	}
 
@@ -31,9 +28,12 @@ public class ParameterizedSubtractionTest {
 	// anotando as variaveis de instancia com @Parameter, nao eh necessario a
 	// declaracao do construtor recebendo os parametros, mas eh obriatorio o uso do
 	// idificador de acesso public
-	@Parameter(0) public int a;
-	@Parameter(1) public int b;
-	@Parameter(2) public int expected;
+	@Parameter(0)
+	public int a;
+	@Parameter(1)
+	public int b;
+	@Parameter(2)
+	public int expected;
 
 	@Before
 	public void setUp() {

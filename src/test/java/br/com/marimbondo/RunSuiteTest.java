@@ -10,13 +10,8 @@ import br.com.marimbondo.rules.DivisionByZeroTest;
 import br.com.marimbondo.rules.TimeOutRuleTest;
 
 @RunWith(value = Suite.class)
-@SuiteClasses({
-	 MathOperationsTest.class,
-	 ParameterizedMultiplicationTest.class,
-	 ParameterizedSubtractionTest.class,
-	 DivisionByZeroTest.class,
-	 TimeOutRuleTest.class
-})
+@SuiteClasses({ MathOperationsTest.class, ParameterizedMultiplicationTest.class, ParameterizedSubtractionTest.class,
+		DivisionByZeroTest.class, TimeOutRuleTest.class })
 public class RunSuiteTest {
 
 }
